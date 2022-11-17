@@ -28,44 +28,32 @@ public class RolController implements Serializable {
 
     private static IRolService service;
     private Rol rol;
-
-   
     private List<Rol> listaRegistros;
 
-   
-    
-    
-    
     @PostConstruct
     public void init() {
         service = new RolServiceImpl();
         rol = new Rol();
         listaRegistros = service.obtenerRegistros();
 
-   
     }
 
-   
     public static void main(String[] args) {
         Rol rol = new Rol();
         rol.setRol("Admin");
         service = new RolServiceImpl();
-   //     service.insertarRegistro(rol);
 
     }
 
-    
-      public void onRowEdit(RowEditEvent event){
-       
-       FacesMessage mensaje = new FacesMessage("REgistro editado esxitosamente");
-       FacesContext.getCurrentInstance().addMessage(null, mensaje);
-   }
-    
-    
+    public void onRowEdit(RowEditEvent event) {
+
+        FacesMessage mensaje = new FacesMessage("REgistro editado esxitosamente");
+        FacesContext.getCurrentInstance().addMessage(null, mensaje);
+    }
+
     public void crearRegistro() {
-         
+
         service.insertarRegistro(rol);
-                
 
         System.out.println("INGRESANDO");
     }
@@ -82,5 +70,4 @@ public class RolController implements Serializable {
         return listaRegistros;
     }
 
-    /*Metodos para la parte de productos*/
 }

@@ -16,15 +16,7 @@ import venta.maven.hibernate.entity.Venta;
  * @author labso20
  */
 public class VentaModelImpl implements IVentaModel{
-    
-    
-   
-    
-    
-    
-    
-    
-    
+ 
      private SessionFactory sf;
     private Session sesion;
  @Override
@@ -58,28 +50,7 @@ public class VentaModelImpl implements IVentaModel{
   
     
      public static void main(String[] args) {
-      /*  IProductoModel modelo = new ProductoModelImpl();
-        
-        
-        Producto producto = new Producto();
-       // producto.setIdprodcuto(10);
-        producto.setNombrep("modem");
-        producto.setPreciop(10);
-        producto.setCantidadp(10);
-        modelo.insertarRegistroProducto(producto);
-         System.out.println("Hola aun no entran los productos");
-        
-         
-         
-         
-        
-         IRolModel modelo = new RolModelImpl();
-        Rol rol = new Rol();
-        rol.setRol("admin");
-        modelo.insertarRegistro(rol);
-      
-         
-         */
+  
          
          
     }

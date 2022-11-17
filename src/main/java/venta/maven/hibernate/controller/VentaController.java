@@ -18,8 +18,6 @@ import venta.maven.hibernate.service.ProductoServiceImpl;
  */
 public class VentaController {
 
- 
-    
     private static IVentaService service;
 
     private Venta venta;
@@ -33,38 +31,26 @@ public class VentaController {
 
     }
 
-    
-    
-    
-       public static void main(String[] args) {
+    public static void main(String[] args) {
 
         Venta venta = new Venta();
-        // producto.setIdprodcuto(10);
-       // venta.setNombrep("modem");
-        //Venta.setPreciop(10);
-        //Venta.setCantidadp(10);
 
         service = new VentaServiceImpl();
         service.insertarRegistroVenta(venta);
 
     }
-    
-    
-    
-    
-     public void crearRegistro() {
+
+    public void crearRegistro() {
         service.insertarRegistroVenta(venta);
         System.out.println("INGRESANDO");
     }
-    
-    
-       public Venta getVenta() {
+
+    public Venta getVenta() {
         return venta;
     }
 
     public List<Venta> getListaRegistroVenta() {
         return listaRegistroVenta;
     }
-    
-    
+
 }

@@ -18,11 +18,6 @@ import venta.maven.hibernate.model.RolModelImpl;
 public class RolServiceImpl implements IRolService{
 private IRolModel modelo=new RolModelImpl();
 
-   /* @Override
-    public void insertarRegistro(Rol rol) {
-    modelo.insertarRegistro(rol);
-    }*/
-
     @Override
     public List<Rol> obtenerRegistros() {
                return modelo.obtenerRegistros();

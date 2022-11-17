@@ -21,23 +21,6 @@ public class RolModelImpl implements IRolModel {
     private SessionFactory sf;
     private Session sesion;
 
- /*   @Override
-    public void insertarRegistro(Rol rol) {
-        try {
-            sf = new Configuration().configure().buildSessionFactory();
-            sesion = sf.openSession();
-            sesion.beginTransaction();
-            sesion.save(rol);
-            sesion.getTransaction().commit();
-            sesion.close();
-            sf.close();
-        } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
-
-        }
-
-    }
-*/
     @Override
     public List<Rol> obtenerRegistros() {
         List<Rol> listaRol = null;
@@ -55,31 +38,25 @@ public class RolModelImpl implements IRolModel {
 
     public static void main(String[] args) {
 
-         IRolModel modelo = new RolModelImpl();
-        
-        
+        IRolModel modelo = new RolModelImpl();
+
         Rol producto = new Rol();
         producto.setRol("SUPERUSUARIO");
         producto.setNombre("MILO");
-       producto.setContraseña("123");
-
-                        
-        
-      //  modelo.insertarRegistro(producto);
-         System.out.println("Hola aun no entran los productos");
-        
+        producto.setContraseña("123");
+        System.out.println("Hola aun no entran los productos");
 
     }
 
     @Override
     public void insertarRegistro(Rol rol) {
-  
-     try {
+
+        try {
             sf = new Configuration().configure().buildSessionFactory();
             sesion = sf.openSession();
             sesion.beginTransaction();
             sesion.save(rol);
-                    ;
+            ;
 
             sesion.getTransaction().commit();
             sesion.close();
@@ -88,8 +65,7 @@ public class RolModelImpl implements IRolModel {
             System.out.println("Error: " + e.getMessage());
 
         }
-    
-    }
 
+    }
 
 }

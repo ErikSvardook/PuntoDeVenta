@@ -36,7 +36,6 @@ public class ProductoController {
     public static void main(String[] args) {
 
         Producto producto = new Producto();
-        // producto.setIdprodcuto(10);
         producto.setNombrep("modem");
         producto.setPreciop(10);
         producto.setCantidadp(10);

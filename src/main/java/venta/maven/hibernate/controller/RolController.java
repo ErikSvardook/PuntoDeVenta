@@ -38,19 +38,15 @@ public class RolController implements Serializable {
 
     }
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         Rol rol = new Rol();
         rol.setRol("Admin");
         service = new RolServiceImpl();
 
-    }
+    }*/
 
-    public void onRowEdit(RowEditEvent event) {
-
-        FacesMessage mensaje = new FacesMessage("REgistro editado esxitosamente");
-        FacesContext.getCurrentInstance().addMessage(null, mensaje);
-    }
-
+ 
+     
     public void crearRegistro() {
 
         service.insertarRegistro(rol);
@@ -70,4 +66,29 @@ public class RolController implements Serializable {
         return listaRegistros;
     }
 
+    public void onRowEdit(RowEditEvent event) {
+        rol = (Rol) event.getObject();
+        service.actualizarRegistro(rol);
+        FacesMessage mensaje = new FacesMessage("Registro editado esxitosamente");
+        FacesContext.getCurrentInstance().addMessage(null, mensaje);
+        
+    }
+
+    public void onRowCancel(RowEditEvent event) {
+        rol = (Rol) event.getObject();
+       
+        service.eliminarRegistro(rol);
+        FacesMessage mensaje = new FacesMessage("Registro eliminado esxitosamente");
+        FacesContext.getCurrentInstance().addMessage(null, mensaje);
+    }
+
+    public void eliminarRegistro() {
+        service.eliminarRegistro(rol);
+        System.out.println("Eliminando");
+    }
+
+    public void actualizarRegistro() {
+        service.actualizarRegistro(rol);
+        System.out.println("Eliminando");
+    }
 }

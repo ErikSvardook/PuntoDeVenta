@@ -68,4 +68,44 @@ public class RolModelImpl implements IRolModel {
 
     }
 
+    @Override
+    public void actualizarRegistro(Rol rol) {
+    
+     try {
+            sf = new Configuration().configure().buildSessionFactory();
+            sesion = sf.openSession();
+            sesion.beginTransaction();
+            sesion.update(rol);
+            
+
+            sesion.getTransaction().commit();
+            sesion.close();
+            sf.close();
+        } catch (HibernateException e) {
+            System.out.println("Error: " + e.getMessage());
+
+        }
+        
+    
+    }
+
+    @Override
+    public void eliminarRegistro(Rol rol) {
+   try {
+            sf = new Configuration().configure().buildSessionFactory();
+            sesion = sf.openSession();
+            sesion.beginTransaction();
+            sesion.delete(rol);
+            
+
+            sesion.getTransaction().commit();
+            sesion.close();
+            sf.close();
+        } catch (HibernateException e) {
+            System.out.println("Error: " + e.getMessage());
+
+        }
+        
+    }
+
 }

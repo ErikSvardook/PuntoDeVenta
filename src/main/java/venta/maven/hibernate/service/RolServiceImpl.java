@@ -30,6 +30,16 @@ private IRolModel modelo=new RolModelImpl();
 
     }
 
+    @Override
+    public void actualizarRegistro(Rol rol) {
+        modelo.actualizarRegistro(rol);
+    }
+
+    @Override
+    public void eliminarRegistro(Rol rol) {
+        modelo.eliminarRegistro(rol);
+    }
+
    
 
 

@@ -13,7 +13,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import org.primefaces.event.RowEditEvent;
-import venta.maven.hibernate.entity.Producto;
 import venta.maven.hibernate.entity.Rol;
 import venta.maven.hibernate.service.IRolService;
 import venta.maven.hibernate.service.RolServiceImpl;
@@ -84,11 +83,9 @@ public class RolController implements Serializable {
 
     public void eliminarRegistro() {
         service.eliminarRegistro(rol);
-        System.out.println("Eliminando");
     }
 
     public void actualizarRegistro() {
         service.actualizarRegistro(rol);
-        System.out.println("Eliminando");
     }
 }

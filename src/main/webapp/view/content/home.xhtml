@@ -81,19 +81,23 @@
 
 
                     <h:panelGrid id="idPanel" columns="2">
+
                         <h:outputLabel value="Ingrese el rol"></h:outputLabel>
-                        <p:inputText id="idRol" value="#{rol.rol.rol}"></p:inputText>
+
+                        <p:inputText id="idRol" value="#{rol.rol.rol}" required="true" >
+
+                        </p:inputText>
 
 
 
 
                         <h:outputLabel value="Ingrese el nombre"></h:outputLabel>
-                        <p:inputText id="idnombre" value="#{rol.rol.nombre}"></p:inputText>
+                        <p:inputText id="idnombre" value="#{rol.rol.nombre}" required="true"></p:inputText>
 
 
 
                         <h:outputLabel value="Ingrese la contraeña"></h:outputLabel>
-                        <p:inputText id="idcontraseña" value="#{rol.rol.contraseña}"></p:inputText>
+                        <p:inputText id="idcontraseña" value="#{rol.rol.contraseña}" required="true"></p:inputText>
 
 
 

@@ -8,14 +8,14 @@
 
     <body>
 
-           <ui:composition template="./../template/index.xhtml">
+        <ui:composition template="./../template/index.xhtml">
 
             <ui:define name="content">
-              
-                   
-                   
-                   
-                   <h:form id="form">
+
+
+
+
+                <h:form id="form">
                     <p:growl id="msgs" showDetail="true"/>
 
                     <p:dataTable id="idTable" var="registro" value="#{producto.listaRegistroProducto}" editable="true"
@@ -83,7 +83,7 @@
 
 
 
-                     <h:panelGrid id="idPanel" columns="2">
+                    <h:panelGrid id="idPanel" columns="2">
                         <h:outputLabel value="Ingrese el el nombre del producto"></h:outputLabel>
                         <p:inputText id="idproducto" value="#{producto.producto.nombrep}"></p:inputText>
 
@@ -91,12 +91,18 @@
 
 
                         <h:outputLabel value="Ingrese el precio del producto"></h:outputLabel>
-                        <p:inputText id="idnombrep" value="#{producto.producto.preciop}"></p:inputText>
+                        <p:inputText id="idnombrep" value="#{producto.producto.preciop}">
+                            <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
+
+                        </p:inputText>
 
 
 
                         <h:outputLabel value="Ingrese la cantidad de productos"></h:outputLabel>
-                        <p:inputText id="idcantidad" value="#{producto.producto.cantidadp}"></p:inputText>
+                        <p:inputText id="idcantidad" value="#{producto.producto.cantidadp}">
+                            <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
+
+                        </p:inputText>
 
 
                         <p:commandButton action="#{producto.crearRegistro()}" value="Guardar registro" update="">
@@ -107,18 +113,18 @@
 
 
                 </h:form>
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-               
+
+
+
+
+
+
+
+
+
+
+
+
 
             </ui:define>
 

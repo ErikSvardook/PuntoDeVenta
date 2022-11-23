@@ -47,7 +47,6 @@ public class Rol implements Serializable {
     @Size(max = 50)
     @Column(name = "contrase\u00f1a")
     private String contraseña;
-
     public Rol() {
     }
 

@@ -7,7 +7,10 @@ package venta.maven.hibernate.controller;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import org.primefaces.event.RowEditEvent;
 import venta.maven.hibernate.entity.Producto;
 import venta.maven.hibernate.service.IProductoService;
 import venta.maven.hibernate.service.ProductoServiceImpl;
@@ -64,5 +67,29 @@ public class ProductoController {
         return listaRegistroProducto;
     }
 
-   
+    
+      public void onRowEdit(RowEditEvent event) {
+        producto = (Producto) event.getObject();
+        service.actualizarRegistro(producto);
+        FacesMessage mensaje = new FacesMessage("Registro editado esxitosamente");
+        FacesContext.getCurrentInstance().addMessage(null, mensaje);
+        
+    }
+
+    public void onRowCancel(RowEditEvent event) {
+        producto = (Producto) event.getObject();
+       
+        service.eliminarRegistro(producto);
+        FacesMessage mensaje = new FacesMessage("Registro eliminado esxitosamente");
+        FacesContext.getCurrentInstance().addMessage(null, mensaje);
+    }
+    
+    
+    public void eliminarRegistro() {
+        service.eliminarRegistro(producto);
+    }
+
+    public void actualizarRegistro() {
+        service.actualizarRegistro(producto);
+    }
 }

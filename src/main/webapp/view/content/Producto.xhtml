@@ -21,8 +21,8 @@
                     <p:dataTable id="idTable" var="registro" value="#{producto.listaRegistroProducto}" editable="true"
                                  style="margin-bottom:20px">
 
-<!--                        <p:ajax event="rowEdit" listener="#{dtEditView.onRowEdit}" update=":form:msgs"/>
-                        <p:ajax event="rowEditCancel" listener="#{dtEditView.onRowCancel}" update=":form:msgs"/>-->
+                        <p:ajax event="rowEdit" listener="#{producto.onRowEdit}" update=":form:msgs"/>
+                        <p:ajax event="rowEditCancel" listener="#{producto.onRowCancel}" update=":form:msgs"/>
 
                         <p:column headerText="id producto">
                             <p:cellEditor>

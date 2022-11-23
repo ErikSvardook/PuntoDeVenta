@@ -6,7 +6,6 @@
 package venta.maven.hibernate.service;
 
 import java.util.List;
-import venta.maven.hibernate.entity.Producto;
 import venta.maven.hibernate.entity.Rol;
 import venta.maven.hibernate.model.IRolModel;
 import venta.maven.hibernate.model.RolModelImpl;

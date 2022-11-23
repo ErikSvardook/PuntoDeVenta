@@ -28,5 +28,15 @@ private IProductoModel modelo=new ProductoModelImpl();
 
     }
 
+    @Override
+    public void actualizarRegistro(Producto producto) {
+         modelo.actualizarRegistro(producto);
+    }
+
+    @Override
+    public void eliminarRegistro(Producto producto) {
+         modelo.eliminarRegistro(producto);
+    }
+
   
 }

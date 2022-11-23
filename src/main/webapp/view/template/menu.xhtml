@@ -2,25 +2,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
    
         
         
         <ui:composition>
             
-            <h:outputLink value="#{request.contextPath}/faces/view/content/home.xhtml" 
-                          class="nav-link">USUARIO</h:outputLink>
-                          
-                          <br></br>
-                          
-            <h:outputLink value="#{request.contextPath}/faces/view/content/Producto.xhtml" 
-                          class="nav-link">PRODUCTO</h:outputLink><!-- comment -->
-                          
-                          <br></br>
-                          
-            <h:outputLink value="#{request.contextPath}/faces/view/content/profesor.xhtml" 
-                          class="nav-link">VENTA</h:outputLink>
+            
+              <h:form>
+                  
+    <p:growl id="messages" showDetail="true"/>
+
+
+
+           <ul>
+          <li><a class="active" href="#{request.contextPath}/faces/view/template/index.xhtml">Venta Online</a></li>
+          <li><a  class="nav-item nav-link"  href="#{request.contextPath}/faces/view/content/home.xhtml" update="messages" ajax="false" icon="pi pi-external-link">Usuarios</a></li>
+          <li><a class="nav-item nav-link"  href="#{request.contextPath}/faces/view/content/Producto.xhtml" update="messages" icon="pi pi-external-link">Productos</a></li>
+          <li><a  class="nav-item nav-link" href="#{request.contextPath}/faces/view/content/profesor.xhtml" update="messages" icon="pi pi-external-link">Venta</a></li>
+   
+      </ul>
+
+
+              </h:form>
+            
+           
             
         </ui:composition>
 

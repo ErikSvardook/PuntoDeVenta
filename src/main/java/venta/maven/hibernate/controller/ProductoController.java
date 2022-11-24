@@ -9,6 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import org.primefaces.event.RowEditEvent;
 import venta.maven.hibernate.entity.Producto;
@@ -92,4 +94,21 @@ public class ProductoController {
     public void actualizarRegistro() {
         service.actualizarRegistro(producto);
     }
+    
+    
+    public void validar(FacesContext context, UIComponent toValidate, Object value){
+        
+        context = FacesContext.getCurrentInstance();
+        String texto = (String)value;
+        
+        if(!texto.equalsIgnoreCase("g")&& texto.equalsIgnoreCase("h")){
+            
+            ((UIInput)toValidate).setValid(false);
+            context.addMessage(toValidate.getClientId(context), new FacesMessage("Pendejo"));
+        }
+        
+        
+        
+    }
+    
 }

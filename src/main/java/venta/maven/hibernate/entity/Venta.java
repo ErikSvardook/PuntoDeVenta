@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author labso20
+ * @author labso12
  */
 @Entity
 @Table(name = "venta")
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Venta.findAll", query = "SELECT v FROM Venta v"),
     @NamedQuery(name = "Venta.findByIdventa", query = "SELECT v FROM Venta v WHERE v.idventa = :idventa"),
-    @NamedQuery(name = "Venta.findByCatidad", query = "SELECT v FROM Venta v WHERE v.catidad = :catidad"),
+    @NamedQuery(name = "Venta.findByCantidad", query = "SELECT v FROM Venta v WHERE v.cantidad = :cantidad"),
     @NamedQuery(name = "Venta.findByPrecio", query = "SELECT v FROM Venta v WHERE v.precio = :precio")})
 public class Venta implements Serializable {
 
@@ -36,8 +36,8 @@ public class Venta implements Serializable {
     @Basic(optional = false)
     @Column(name = "idventa")
     private Integer idventa;
-    @Column(name = "catidad")
-    private Integer catidad;
+    @Column(name = "cantidad")
+    private Integer cantidad;
     @Column(name = "precio")
     private Integer precio;
 
@@ -56,12 +56,12 @@ public class Venta implements Serializable {
         this.idventa = idventa;
     }
 
-    public Integer getCatidad() {
-        return catidad;
+    public Integer getCantidad() {
+        return cantidad;
     }
 
-    public void setCatidad(Integer catidad) {
-        this.catidad = catidad;
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
     }
 
     public Integer getPrecio() {

@@ -1,10 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package venta.maven.hibernate.entity;
-////////////////////////Me la pelan todoos
+
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -20,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author emili
+ * @author labso12
  */
 @Entity
 @Table(name = "producto")
@@ -28,9 +27,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Producto.findAll", query = "SELECT p FROM Producto p"),
     @NamedQuery(name = "Producto.findByIdproducto", query = "SELECT p FROM Producto p WHERE p.idproducto = :idproducto"),
-    @NamedQuery(name = "Producto.findByNombrep", query = "SELECT p FROM Producto p WHERE p.nombrep = :nombrep"),
-    @NamedQuery(name = "Producto.findByPreciop", query = "SELECT p FROM Producto p WHERE p.preciop = :preciop"),
-    @NamedQuery(name = "Producto.findByCantidadp", query = "SELECT p FROM Producto p WHERE p.cantidadp = :cantidadp")})
+    @NamedQuery(name = "Producto.findByNombre", query = "SELECT p FROM Producto p WHERE p.nombre = :nombre"),
+    @NamedQuery(name = "Producto.findByPreciounitario", query = "SELECT p FROM Producto p WHERE p.preciounitario = :preciounitario"),
+    @NamedQuery(name = "Producto.findByPreciocompra", query = "SELECT p FROM Producto p WHERE p.preciocompra = :preciocompra"),
+    @NamedQuery(name = "Producto.findByCantidad", query = "SELECT p FROM Producto p WHERE p.cantidad = :cantidad")})
 public class Producto implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,13 +39,15 @@ public class Producto implements Serializable {
     @Basic(optional = false)
     @Column(name = "idproducto")
     private Integer idproducto;
-    @Size(max = 50)
-    @Column(name = "nombrep")
-    private String nombrep;
-    @Column(name = "preciop")
-    private Integer preciop;
-    @Column(name = "cantidadp")
-    private Integer cantidadp;
+    @Size(max = 20)
+    @Column(name = "nombre")
+    private String nombre;
+    @Column(name = "preciounitario")
+    private Integer preciounitario;
+    @Column(name = "preciocompra")
+    private Integer preciocompra;
+    @Column(name = "cantidad")
+    private Integer cantidad;
 
     public Producto() {
     }
@@ -62,28 +64,36 @@ public class Producto implements Serializable {
         this.idproducto = idproducto;
     }
 
-    public String getNombrep() {
-        return nombrep;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombrep(String nombrep) {
-        this.nombrep = nombrep;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Integer getPreciop() {
-        return preciop;
+    public Integer getPreciounitario() {
+        return preciounitario;
     }
 
-    public void setPreciop(Integer preciop) {
-        this.preciop = preciop;
+    public void setPreciounitario(Integer preciounitario) {
+        this.preciounitario = preciounitario;
     }
 
-    public Integer getCantidadp() {
-        return cantidadp;
+    public Integer getPreciocompra() {
+        return preciocompra;
     }
 
-    public void setCantidadp(Integer cantidadp) {
-        this.cantidadp = cantidadp;
+    public void setPreciocompra(Integer preciocompra) {
+        this.preciocompra = preciocompra;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
     }
 
     @Override

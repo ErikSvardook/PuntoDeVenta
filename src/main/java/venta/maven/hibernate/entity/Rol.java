@@ -5,7 +5,6 @@
 package venta.maven.hibernate.entity;
 
 import java.io.Serializable;
-import javax.faces.bean.ManagedBean;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,9 +19,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author labso20
+ * @author labso12
  */
-@ManagedBean
 @Entity
 @Table(name = "rol")
 @XmlRootElement
@@ -40,15 +38,16 @@ public class Rol implements Serializable {
     @Basic(optional = false)
     @Column(name = "idrol")
     private Integer idrol;
-    @Size(max = 50)
+    @Size(max = 20)
     @Column(name = "rol")
     private String rol;
-    @Size(max = 50)
+    @Size(max = 20)
     @Column(name = "nombre")
     private String nombre;
-    @Size(max = 50)
+    @Size(max = 20)
     @Column(name = "contrase\u00f1a")
     private String contraseña;
+
     public Rol() {
     }
 

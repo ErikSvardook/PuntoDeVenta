@@ -55,9 +55,9 @@ public class ProductoModelImpl implements IProductoModel{
         
         Producto producto = new Producto();
        // producto.setIdprodcuto(10);
-        producto.setNombrep("modem");
-        producto.setPreciop(10);
-        producto.setCantidadp(10);
+//        producto.setNombrep("modem");
+//        producto.setPreciop(10);
+//        producto.setCantidadp(10);
         modelo.insertarRegistroProducto(producto);
          System.out.println("Hola aun no entran los productos");
         

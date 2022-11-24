@@ -88,4 +88,6 @@ public class RolController implements Serializable {
     public void actualizarRegistro() {
         service.actualizarRegistro(rol);
     }
+    
+    
 }

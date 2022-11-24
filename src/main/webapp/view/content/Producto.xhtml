@@ -20,7 +20,6 @@
 
                     <p:dataTable id="idTable" var="registro" value="#{producto.listaRegistroProducto}" editable="true"
                                  style="margin-bottom:20px">
-
                         <p:ajax event="rowEdit" listener="#{producto.onRowEdit}" update=":form:msgs"/>
                         <p:ajax event="rowEditCancel" listener="#{producto.onRowCancel}" update=":form:msgs"/>
 
@@ -38,97 +37,77 @@
                         <p:column headerText="Nombre del Producto">
                             <p:cellEditor>
                                 <f:facet name="output">
-                                    <h:outputText value="#{registro.nombrep}"/>
+                                    <h:outputText value="#{registro.nombre}"/>
                                 </f:facet>
                                 <f:facet name="input">
-                                    <p:inputText value="#{registro.nombrep}" style="width:100%" label="Name"/>
+                                    <p:inputText value="#{registro.nombre}" style="width:100%" label="Name"/>
                                 </f:facet>
                             </p:cellEditor>
                         </p:column>
 
-
-
-                        <p:column headerText="Precio del producto">
+                        <p:column headerText="Precio del producto unitario">
                             <p:cellEditor>
                                 <f:facet name="output">
-                                    <h:outputText value="#{registro.preciop}"/>
+                                    <h:outputText value="#{registro.preciounitario}"/>
                                 </f:facet>
                                 <f:facet name="input">
-                                    <p:inputText value="#{registro.preciop}" style="width:100%" label="Name"/>
+                                    <p:inputText value="#{registro.preciounitario}" style="width:100%" label="Name"/>
                                 </f:facet>
                             </p:cellEditor>
                         </p:column>
 
-
-
-                        <p:column headerText="Stok">
+                        <p:column headerText="Precio del producto compra">
                             <p:cellEditor>
                                 <f:facet name="output">
-                                    <h:outputText value="#{registro.cantidadp}"/>
+                                    <h:outputText value="#{registro.preciocompra}"/>
                                 </f:facet>
                                 <f:facet name="input">
-                                    <p:inputText value="#{registro.cantidadp}" style="width:100%" label="Name"/>
+                                    <p:inputText value="#{registro.preciocompra}" style="width:100%" label="Name"/>
                                 </f:facet>
                             </p:cellEditor>
                         </p:column>
 
-
-
+                        <p:column headerText="Cantidad del producto">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{registro.cantidad}"/>
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText value="#{registro.cantidad}" style="width:100%" label="Name"/>
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+                        
                         <p:column style="width:6rem">
                             <p:rowEditor editTitle="Edit Row" cancelTitle="Cancel Edit" saveTitle="Save Row"/>
                         </p:column>
                     </p:dataTable>
 
-
-
-
-
                     <h:panelGrid id="idPanel" columns="2">
                         <h:outputLabel value="Ingrese el el nombre del producto"></h:outputLabel>
-                        <p:inputText id="idproducto" value="#{producto.producto.nombrep}" ></p:inputText>
+                        <p:inputText id="idproducto" value="#{producto.producto.nombre}"></p:inputText>
                         <h:messages for="idproducto"/>
 
-
-
-                        <h:outputLabel value="Ingrese el precio del producto"></h:outputLabel>
-                        <p:inputText id="idnombrep" value="#{producto.producto.preciop}">
+                        <h:outputLabel value="Ingrese el precio unitario del producto"></h:outputLabel>
+                        <p:inputText id="idnombre" value="#{producto.producto.preciounitario}">
                             <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
-
                         </p:inputText>
-
-
+                        
+                        <h:outputLabel value="Ingrese el precio de compra del producto"></h:outputLabel>
+                        <p:inputText id="idnombrep" value="#{producto.producto.preciounitario}">
+                            <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
+                        </p:inputText>
 
                         <h:outputLabel value="Ingrese la cantidad de productos"></h:outputLabel>
-                        <p:inputText id="idcantidad" value="#{producto.producto.cantidadp}">
+                        <p:inputText id="idcantidad" value="#{producto.producto.cantidad}">
                             <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
-
                         </p:inputText>
-
 
                         <p:commandButton action="#{producto.crearRegistro()}" value="Guardar registro" update=":form:idTable">
                         </p:commandButton>
-
-
                     </h:panelGrid>
-
-
                 </h:form>
-
-
-
-
-
-
-
-
-
-
-
-
-
             </ui:define>
-
         </ui:composition>
-
     </body>
 </html>

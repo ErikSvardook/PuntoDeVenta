@@ -96,19 +96,24 @@ public class ProductoController {
     }
     
     
-    public void validar(FacesContext context, UIComponent toValidate, Object value){
-        
+    public void validarTexto(FacesContext context, UIComponent toValidate, Object value){
         context = FacesContext.getCurrentInstance();
         String texto = (String)value;
         
-        if(!texto.equalsIgnoreCase("g")&& texto.equalsIgnoreCase("h")){
-            
+        if(!texto.matches("[A-Z]*")){
             ((UIInput)toValidate).setValid(false);
-            context.addMessage(toValidate.getClientId(context), new FacesMessage("Pendejo"));
+            context.addMessage("Nota", new FacesMessage("Solo deben ingresarse letras"));
         }
+    }
+    
+    public void validarNumeros(FacesContext context, UIComponent toValidate, Object value){
+        context = FacesContext.getCurrentInstance();
+        String texto = (String)value;
         
-        
-        
+        if(texto.compareTo("hola")==0){
+            ((UIInput)toValidate).setValid(false);
+            context.addMessage("nota", new FacesMessage("xxxxx"));
+        }
     }
     
 }

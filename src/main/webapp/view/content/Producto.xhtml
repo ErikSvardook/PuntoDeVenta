@@ -85,8 +85,8 @@
 
                     <h:panelGrid id="idPanel" columns="2">
                         <h:outputLabel value="Ingrese el el nombre del producto"></h:outputLabel>
-                        <p:inputText id="idproducto" value="#{producto.producto.nombre}"></p:inputText>
-                        <h:messages for="idproducto"/>
+                        <p:inputText id="idproducto" value="#{producto.producto.nombre}" required="true" validator="#{producto.validarTexto}" ></p:inputText>
+                        
 
                         <h:outputLabel value="Ingrese el precio unitario del producto"></h:outputLabel>
                         <p:inputText id="idnombre" value="#{producto.producto.preciounitario}">
@@ -94,7 +94,7 @@
                         </p:inputText>
                         
                         <h:outputLabel value="Ingrese el precio de compra del producto"></h:outputLabel>
-                        <p:inputText id="idnombrep" value="#{producto.producto.preciounitario}">
+                        <p:inputText id="idnombrep" value="#{producto.producto.preciocompra}">
                             <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
                         </p:inputText>
 
@@ -103,7 +103,7 @@
                             <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
                         </p:inputText>
 
-                        <p:commandButton action="#{producto.crearRegistro()}" value="Guardar registro" update=":form:idTable">
+                        <p:commandButton action="#{producto.crearRegistro()}" value="Guardar registro" update=":form:idTable,:form:msgs">
                         </p:commandButton>
                     </h:panelGrid>
                 </h:form>

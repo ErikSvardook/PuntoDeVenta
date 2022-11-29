@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package venta.maven.hibernate.model;
 
 import java.util.List;
@@ -12,10 +7,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import venta.maven.hibernate.entity.Rol;
 
-/**
- *
- * @author emili
- */
 public class RolModelImpl implements IRolModel {
 
     private SessionFactory sf;
@@ -31,7 +22,7 @@ public class RolModelImpl implements IRolModel {
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
+
         }
         return listaRol;
     }
@@ -44,7 +35,7 @@ public class RolModelImpl implements IRolModel {
         producto.setRol("SUPERUSUARIO");
         producto.setNombre("MILO");
         producto.setContraseña("123");
-        System.out.println("Hola aun no entran los productos");
+        
 
     }
 
@@ -56,13 +47,10 @@ public class RolModelImpl implements IRolModel {
             sesion = sf.openSession();
             sesion.beginTransaction();
             sesion.save(rol);
-            ;
-
             sesion.getTransaction().commit();
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
 
         }
 
@@ -70,42 +58,37 @@ public class RolModelImpl implements IRolModel {
 
     @Override
     public void actualizarRegistro(Rol rol) {
-    
-     try {
+
+        try {
             sf = new Configuration().configure().buildSessionFactory();
             sesion = sf.openSession();
             sesion.beginTransaction();
             sesion.update(rol);
-            
 
             sesion.getTransaction().commit();
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
 
         }
-        
-    
+
     }
 
     @Override
     public void eliminarRegistro(Rol rol) {
-   try {
+        try {
             sf = new Configuration().configure().buildSessionFactory();
             sesion = sf.openSession();
             sesion.beginTransaction();
             sesion.delete(rol);
-            
 
             sesion.getTransaction().commit();
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
 
         }
-        
+
     }
 
 }

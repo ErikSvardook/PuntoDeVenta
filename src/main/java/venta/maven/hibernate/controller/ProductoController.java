@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package venta.maven.hibernate.controller;
 
 import java.util.List;
@@ -17,10 +14,6 @@ import venta.maven.hibernate.entity.Producto;
 import venta.maven.hibernate.service.IProductoService;
 import venta.maven.hibernate.service.ProductoServiceImpl;
 
-/**
- *
- * @author labso20
- */
 @RequestScoped
 @ManagedBean(name = "producto")
 public class ProductoController {
@@ -41,9 +34,6 @@ public class ProductoController {
     public static void main(String[] args) {
 
         Producto producto = new Producto();
-//        producto.setNombrep("modem");
-//        producto.setPreciop(10);
-//        producto.setCantidadp(10);
 
         service = new ProductoServiceImpl();
         service.insertarRegistroProducto(producto);

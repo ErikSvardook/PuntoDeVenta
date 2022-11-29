@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package venta.maven.hibernate.model;
 
 import java.util.List;
@@ -12,10 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import venta.maven.hibernate.entity.Producto;
 
-/**
- *
- * @author emili
- */   //IRolModel
+
 public class ProductoModelImpl implements IProductoModel{
  private SessionFactory sf;
     private Session sesion;
@@ -30,7 +23,7 @@ public class ProductoModelImpl implements IProductoModel{
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
+           
 
         }    }
 
@@ -44,7 +37,7 @@ public class ProductoModelImpl implements IProductoModel{
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
+          
         }
         return listaproducto;    }
   
@@ -54,24 +47,10 @@ public class ProductoModelImpl implements IProductoModel{
         
         
         Producto producto = new Producto();
-       // producto.setIdprodcuto(10);
-//        producto.setNombrep("modem");
-//        producto.setPreciop(10);
-//        producto.setCantidadp(10);
         modelo.insertarRegistroProducto(producto);
-         System.out.println("Hola aun no entran los productos");
-        
-         
-         /*
          
         
-         IRolModel modelo = new RolModelImpl();
-        Rol rol = new Rol();
-        rol.setRol("admin");
-        modelo.insertarRegistro(rol);
-      
          
-         */
          
          
     }
@@ -89,7 +68,7 @@ public class ProductoModelImpl implements IProductoModel{
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
+           
 
         }    }
 
@@ -106,7 +85,7 @@ public class ProductoModelImpl implements IProductoModel{
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-            System.out.println("Error: " + e.getMessage());
+            
 
         }
             }

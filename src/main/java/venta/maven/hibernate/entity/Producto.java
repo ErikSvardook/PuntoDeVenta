@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package venta.maven.hibernate.entity;
 
 import java.io.Serializable;
@@ -17,10 +14,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author labso12
- */
 @Entity
 @Table(name = "producto")
 @XmlRootElement
@@ -105,7 +98,6 @@ public class Producto implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Producto)) {
             return false;
         }

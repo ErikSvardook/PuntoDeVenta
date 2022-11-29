@@ -18,8 +18,8 @@
                     <p:dataTable id="idTable" var="registro" value="#{rol.listaRegistros}" editable="true"
                                  style="margin-bottom:20px">
 
-                       <p:ajax event="rowEdit" listener="#{rol.onRowEdit}" update=":form:msgs"/> 
-                      <p:ajax event="rowEditCancel" listener="#{rol.onRowCancel}" update=":form:msgs"/> 
+                        <p:ajax event="rowEdit" listener="#{rol.onRowEdit}" update=":form:msgs"/> 
+                        <p:ajax event="rowEditCancel" listener="#{rol.onRowCancel}" update=":form:msgs"/> 
 
                         <p:column headerText="id Rol">
                             <p:cellEditor>

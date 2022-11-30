@@ -1,3 +1,4 @@
+ /*Estilos del top perteneciente a header */
 #top {
     position: relative;
     background-color: #5be440;
@@ -5,28 +6,28 @@
     padding: 1px;
     margin: 0px 0px 0px 0px;
 }
-
+ /*Estilos del boton a utilizar */
 #bottom {
     position: relative;
     background-color: #ccffcc;
     padding: 5px  0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
-
+/*Estilos que se ocuparon para poder revisar el lado izquierdo */
 #left {
     float: left;
     background-color: #ece3a5;
     padding: 5px;
     width: 150px;
 }
-
+/*Estilos que se ocuparon para poder revisar el lado derecho */
 #right {
     float: right;
     background-color: #ece3a5;
     padding: 5px;
     width: 150px;
 }
-
+/*Estilos que pertenecen a contenido central */
 .center_content {
     background: rgba(0, 0, 0, 0.5) url("https://www.xtrafondos.com/wallpapers/ladera-382.jpg");
     height: 100%;
@@ -35,25 +36,25 @@
     background-size: cover;
     background-blend-mode: darken;
 }
-
+/*Estilos que pertenecen a contenido izquierdo */
 .left_content {
     background-color: #dddddd;
     padding: 5px;
     margin-left: 170px;
 }
-
+/*Estilos que pertenecen a contenido derecho*/
 .right_content {
     background-color: #dddddd;
     padding: 5px;
     margin: 0px 170px 0px 170px;
 }
-
+/*Estilos pertenecientes al top del header*/
 #top a:link, #top a:visited {
     color: #fff;
     font-weight : bold;
     text-decoration: none;
 }
-
+/*Estilos pertenecientes al top del header*/
 #top a:link:hover, #top a:visited:hover  {
     color: #ffffff;
     font-weight : bold;

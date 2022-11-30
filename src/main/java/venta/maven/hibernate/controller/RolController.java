@@ -30,12 +30,10 @@ public class RolController implements Serializable {
 
     }
 
- 
      
     public void crearRegistro() {
 
         service.insertarRegistro(rol);
-
   
     }
 

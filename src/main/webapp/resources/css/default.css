@@ -1,4 +1,4 @@
-
+/*Estilos para darle estilo al body*/
 body {
     background-color: #ffffff;
     font-size: 12px;
@@ -6,7 +6,7 @@ body {
     color: #000000;  
     margin: 0px;
 }
-
+/*Estilos para darle estilo al h1*/
 h1 {
     font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
     border-bottom: 1px solid #AFAFAF; 
@@ -16,13 +16,13 @@ h1 {
     padding: 0px;
     color: #D20005;
 }
-
+/*Estilos para darle link*/
 a:link, a:visited {
   color: #045491;
   font-weight : bold;
   text-decoration: none;
 }
-
+/*Estilos de la etiqueta a:link:hover*/
 a:link:hover, a:visited:hover  {
   color: #045491;
   font-weight : bold;

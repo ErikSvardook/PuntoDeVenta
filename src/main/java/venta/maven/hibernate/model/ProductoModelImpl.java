@@ -48,9 +48,7 @@ public class ProductoModelImpl implements IProductoModel{
         
         Producto producto = new Producto();
         modelo.insertarRegistroProducto(producto);
-         
-        
-         
+ 
          
          
     }
@@ -68,8 +66,7 @@ public class ProductoModelImpl implements IProductoModel{
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-           
-
+            
         }    }
 
     @Override
@@ -84,8 +81,7 @@ public class ProductoModelImpl implements IProductoModel{
             sesion.getTransaction().commit();
             sesion.close();
             sf.close();
-        } catch (HibernateException e) {
-            
+        } catch (HibernateException e) {           
 
         }
             }

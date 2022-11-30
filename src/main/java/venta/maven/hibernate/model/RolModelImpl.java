@@ -1,5 +1,12 @@
-package venta.maven.hibernate.model;
+/*
+Autor:Hermilo Almaraz Vargas
+Creacion:10/Nov/2022
+Actualizacion:22/Nov/2022
+Descripcion: En este clase se implementan los metodos obtener registros, insertarregistro,
+actualizarregistro y eliminarregistro con ayuda de los elementos de hibernate.
+*/
 
+package venta.maven.hibernate.model;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

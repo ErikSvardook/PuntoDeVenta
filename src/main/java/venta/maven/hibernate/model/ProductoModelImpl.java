@@ -11,25 +11,29 @@ import venta.maven.hibernate.entity.Producto;
 
 public class ProductoModelImpl implements IProductoModel{
  private SessionFactory sf;
-    private Session sesion;
+ private Session sesion;
+ 
+    //Método para insertar registro de un producto
  @Override
     public void insertarRegistroProducto(Producto producto) {
- try {
-            sf = new Configuration().configure().buildSessionFactory();
-            sesion = sf.openSession();
-            sesion.beginTransaction();
-            sesion.save(producto);
-            sesion.getTransaction().commit();
-            sesion.close();
-            sf.close();
-        } catch (HibernateException e) {
-           
+     try {
+        sf = new Configuration().configure().buildSessionFactory();
+        sesion = sf.openSession();
+        sesion.beginTransaction();
+        sesion.save(producto);
+        sesion.getTransaction().commit();
+        sesion.close();
+        sf.close();
+            } catch (HibernateException e) {
 
-        }    }
 
+            }   
+    }
+    
+    //Método para obtener registros de los productos
     @Override
     public List<Producto> obtenerRegistrosProdProducto() {
- List<Producto> listaproducto = null;
+        List<Producto> listaproducto = null;
         try {
             sf = new Configuration().configure().buildSessionFactory();
             sesion = sf.openSession();
@@ -39,57 +43,38 @@ public class ProductoModelImpl implements IProductoModel{
         } catch (HibernateException e) {
           
         }
-        return listaproducto;    }
-  
-    
-     public static void main(String[] args) {
-        IProductoModel modelo = new ProductoModelImpl();
-        
-        
-        Producto producto = new Producto();
-        modelo.insertarRegistroProducto(producto);
- 
-         
-         
+        return listaproducto;    
     }
-
+    //Método para actualizar registro de productos
     @Override
     public void actualizarRegistro(Producto producto) {
-  try {
+      try {
             sf = new Configuration().configure().buildSessionFactory();
             sesion = sf.openSession();
             sesion.beginTransaction();
-            sesion.update(producto);
-            
-
+            sesion.update(producto);           
             sesion.getTransaction().commit();
             sesion.close();
             sf.close();
-        } catch (HibernateException e) {
-            
-        }    }
+            } catch (HibernateException e) {
 
+            }  
+    }
+
+    //Método para eliminar registro de un producto
     @Override
     public void eliminarRegistro(Producto producto) {
- try {
+     try {
             sf = new Configuration().configure().buildSessionFactory();
             sesion = sf.openSession();
             sesion.beginTransaction();
             sesion.delete(producto);
-            
-
             sesion.getTransaction().commit();
             sesion.close();
             sf.close();
         } catch (HibernateException e) {           
 
         }
-            }
+    }
 
-  
-
-  
- 
-    
-    
 }

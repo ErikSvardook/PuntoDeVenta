@@ -15,12 +15,14 @@ private IRolModel modelo=new RolModelImpl();
                return modelo.obtenerRegistros();
 
     }
+    
     //Metodo para poder insertar los registros de usuario
     @Override
     public void insertarRegistro(Rol rol) {
         modelo.insertarRegistro(rol);
 
     }
+    
     //Metodo para poder actualizar los registros de usuario
     @Override
     public void actualizarRegistro(Rol rol) {

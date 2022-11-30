@@ -12,6 +12,7 @@ public class RolModelImpl implements IRolModel {
     private SessionFactory sf;
     private Session sesion;
 
+    //Método para obtener registros de los ususarios 
     @Override
     public List<Rol> obtenerRegistros() {
         List<Rol> listaRol = null;
@@ -27,18 +28,7 @@ public class RolModelImpl implements IRolModel {
         return listaRol;
     }
 
-    public static void main(String[] args) {
-
-        IRolModel modelo = new RolModelImpl();
-
-        Rol producto = new Rol();
-        producto.setRol("SUPERUSUARIO");
-        producto.setNombre("MILO");
-        producto.setContraseña("123");
-        
-
-    }
-
+    //Método para insertar registro de un ususario
     @Override
     public void insertarRegistro(Rol rol) {
 
@@ -56,6 +46,7 @@ public class RolModelImpl implements IRolModel {
 
     }
 
+    //Método para actualizar registro
     @Override
     public void actualizarRegistro(Rol rol) {
 
@@ -64,7 +55,6 @@ public class RolModelImpl implements IRolModel {
             sesion = sf.openSession();
             sesion.beginTransaction();
             sesion.update(rol);
-
             sesion.getTransaction().commit();
             sesion.close();
             sf.close();
@@ -81,7 +71,6 @@ public class RolModelImpl implements IRolModel {
             sesion = sf.openSession();
             sesion.beginTransaction();
             sesion.delete(rol);
-
             sesion.getTransaction().commit();
             sesion.close();
             sf.close();

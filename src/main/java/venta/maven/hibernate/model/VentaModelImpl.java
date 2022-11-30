@@ -11,11 +11,13 @@ import venta.maven.hibernate.entity.Venta;
 
 public class VentaModelImpl implements IVentaModel{
  
-     private SessionFactory sf;
+    private SessionFactory sf;
     private Session sesion;
- @Override
+    
+   //Método para registrar venta
+   @Override
     public void insertarRegistroVenta(Venta venta) {
- try {
+     try {
             sf = new Configuration().configure().buildSessionFactory();
             sesion = sf.openSession();
             sesion.beginTransaction();
@@ -24,12 +26,14 @@ public class VentaModelImpl implements IVentaModel{
             sesion.close();
             sf.close();
         } catch (HibernateException e) {
-           
-        }    }
 
+        }   
+    }
+    
+    //Método para obtener registro de ventas
     @Override
     public List<Venta> obtenerRegistrosVenta() {
- List<Venta> listaventa = null;
+        List<Venta> listaventa = null;
         try {
             sf = new Configuration().configure().buildSessionFactory();
             sesion = sf.openSession();
@@ -39,28 +43,7 @@ public class VentaModelImpl implements IVentaModel{
         } catch (HibernateException e) {
            
         }
-        return listaventa;    }
+        return listaventa;   
+    }
   
-    
-    
-  
-
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

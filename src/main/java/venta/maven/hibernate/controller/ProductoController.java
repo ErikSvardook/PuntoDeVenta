@@ -69,8 +69,7 @@ public class ProductoController {
     }
 
     public void onRowCancel(RowEditEvent event) {
-        producto = (Producto) event.getObject();
-       
+        producto = (Producto) event.getObject();      
         service.eliminarRegistro(producto);
         FacesMessage mensaje = new FacesMessage("Registro eliminado esxitosamente");
         FacesContext.getCurrentInstance().addMessage(null, mensaje);

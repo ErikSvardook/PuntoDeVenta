@@ -1,4 +1,9 @@
-
+/*
+Autor: Gamaliel Silva Lopez
+Creacion: 15/11/20222
+Actualizacion: 01/12/2022
+Descripción: Usuarios services
+*/
 package venta.maven.hibernate.service;
 
 import java.util.List;

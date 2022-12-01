@@ -86,18 +86,16 @@
 
 
                         <h:outputLabel value="Ingrese el precio unitario del producto"></h:outputLabel>
-                        <p:inputText id="idnombre" value="#{producto.producto.preciounitario}">
-                            <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
+                        <p:inputText id="idnombre" value="#{producto.producto.preciounitario}" required="true">
                         </p:inputText>
 
                         <h:outputLabel value="Ingrese el precio de compra del producto"></h:outputLabel>
-                        <p:inputText id="idnombrep" value="#{producto.producto.preciocompra}">
-                            <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
+                        <p:inputText id="idnombrep" value="#{producto.producto.preciocompra}" required="true">
                         </p:inputText>
 
                         <h:outputLabel value="Ingrese la cantidad de productos"></h:outputLabel>
-                        <p:inputText id="idcantidad" value="#{producto.producto.cantidad}">
-                            <f:validateLongRange minimum="0" maximum="100"></f:validateLongRange>
+                        <p:inputText id="idcantidad" value="#{producto.producto.cantidad}" required="true">
+                            <f:validateLongRange minimum="0"></f:validateLongRange>
                         </p:inputText>
 
                         <p:commandButton action="#{producto.crearRegistro()}" value="Guardar registro" update=":form:idTable,:form:msgs">

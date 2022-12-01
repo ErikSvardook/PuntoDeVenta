@@ -92,7 +92,7 @@ public class ProductoController {
         context = FacesContext.getCurrentInstance();
         String texto = (String) value;
 
-        if (!texto.matches("[A-Z]*")) {
+        if (!texto.matches("[A-Za-z]*")) {
             ((UIInput) toValidate).setValid(false);
             context.addMessage("Nota", new FacesMessage("Solo deben ingresarse letras"));
         }

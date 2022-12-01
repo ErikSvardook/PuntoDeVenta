@@ -7,13 +7,12 @@
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/prueba</property>
     <property name="hibernate.connection.username">postgres</property>
-    <property name="hibernate.connection.password">rajkire16</property>
+    <property name="hibernate.connection.password">milo</property>
     <property name="hibernate.connection.pool_size">1</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="venta.maven.hibernate.entity.Rol"/>
     <mapping class="venta.maven.hibernate.entity.Producto"/>
-
   </session-factory>
 </hibernate-configuration>

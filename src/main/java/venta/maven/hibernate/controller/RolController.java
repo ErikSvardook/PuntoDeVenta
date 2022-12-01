@@ -7,6 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import org.primefaces.event.RowEditEvent;
 import venta.maven.hibernate.entity.Rol;
@@ -73,5 +75,14 @@ public class RolController implements Serializable {
         service.actualizarRegistro(rol);
     }
     
-    
+      public void validarTexto(FacesContext context, UIComponent toValidate, Object value) {
+        context = FacesContext.getCurrentInstance();
+        String texto = (String) value;
+
+        if (!texto.matches("[A-Za-z]*")) {
+            ((UIInput) toValidate).setValid(false);
+            context.addMessage("Nota", new FacesMessage("Solo deben ingresarse letras"));
+        }
+    }
+
 }

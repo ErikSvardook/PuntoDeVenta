@@ -8,7 +8,6 @@
 
     <body>
 
-
         <ui:composition template="./../template/index.xhtml">
 
             <ui:define name="content">
@@ -43,8 +42,6 @@
                             </p:cellEditor>
                         </p:column>
 
-
-
                         <p:column headerText="Nombre">
                             <p:cellEditor>
                                 <f:facet name="output">
@@ -55,8 +52,6 @@
                                 </f:facet>
                             </p:cellEditor>
                         </p:column>
-
-
 
                         <p:column headerText="Contraeña">
                             <p:cellEditor>
@@ -69,56 +64,34 @@
                             </p:cellEditor>
                         </p:column>
 
-
-
                         <p:column style="width:6rem">
                             <p:rowEditor editTitle="Edit Row" cancelTitle="Cancel Edit" saveTitle="Save Row"/>
                         </p:column>
                     </p:dataTable>
 
-
-
-
-
                     <h:panelGrid id="idPanel" columns="2">
 
                         <h:outputLabel value="Ingrese el rol"></h:outputLabel>
 
-                        <p:inputText id="idRol" value="#{rol.rol.rol}" required="true" >
+                        <p:inputText id="idRol" value="#{rol.rol.rol}" required="true" validator="#{rol.validarTexto}" >
 
                         </p:inputText>
 
-
-
-
                         <h:outputLabel value="Ingrese el nombre"></h:outputLabel>
-                        <p:inputText id="idnombre" value="#{rol.rol.nombre}" required="true"></p:inputText>
-
-
+                        <p:inputText id="idnombre" value="#{rol.rol.nombre}" required="true" validator="#{rol.validarTexto}"></p:inputText>
 
                         <h:outputLabel value="Ingrese la contraeña"></h:outputLabel>
                         <p:inputText id="idcontraseña" value="#{rol.rol.contraseña}" required="true"></p:inputText>
 
-
-
-
-
-
-
-
                         <p:commandButton action="#{rol.crearRegistro()}" value="Guardar registro" update=":form:idTable">
                         </p:commandButton>
 
-
                     </h:panelGrid>
-
-
 
                 </h:form>
             </ui:define>
 
         </ui:composition>
-
 
     </body>
 </html>

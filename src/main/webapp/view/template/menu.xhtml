@@ -5,26 +5,21 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 
-        <ui:composition>
-            
-            
-              <h:form>
-                  
-    <p:growl id="messages" showDetail="true"/>
+    <ui:composition>
 
-           <ul>
-          <li><a class="active" href="#{request.contextPath}/faces/view/template/index.xhtml">Venta Online</a></li>
-          <li><a  class="nav-item nav-link"  href="#{request.contextPath}/faces/view/content/home.xhtml" update="messages" ajax="false" icon="pi pi-external-link">Usuarios</a></li>
-          <li><a class="nav-item nav-link"  href="#{request.contextPath}/faces/view/content/Producto.xhtml" update="messages" icon="pi pi-external-link">Productos</a></li>
-          <li><a  class="nav-item nav-link" href="#{request.contextPath}/faces/view/content/profesor.xhtml" update="messages" icon="pi pi-external-link">Venta</a></li>
-   
-      </ul>
+        <h:form>
 
+            <p:growl id="messages" showDetail="true"/>
 
-              </h:form>
-  
-        </ui:composition>
+            <ul>
+                <li><a class="active" href="#{request.contextPath}/faces/view/template/index.xhtml">Venta Online</a></li>
+                <li><a  class="nav-item nav-link"  href="#{request.contextPath}/faces/view/content/home.xhtml" update="messages" ajax="false" icon="pi pi-external-link">Usuarios</a></li>
+                <li><a class="nav-item nav-link"  href="#{request.contextPath}/faces/view/content/Producto.xhtml" update="messages" icon="pi pi-external-link">Productos</a></li>
+                <li><a  class="nav-item nav-link" href="#{request.contextPath}/faces/view/content/profesor.xhtml" update="messages" icon="pi pi-external-link">Venta</a></li>
 
+            </ul>
+        </h:form>
 
-   
+    </ui:composition>
+
 </html>

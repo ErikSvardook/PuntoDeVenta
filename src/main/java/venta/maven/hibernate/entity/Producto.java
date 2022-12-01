@@ -1,4 +1,9 @@
-
+/*
+Autor:Gamaliel Silva López 
+Creacion:15/Nov/2022
+Actualizacion:1/diembre/2022
+Descripcion: Se implementa la conexion de base de datos de la tabla producto.
+*/
 package venta.maven.hibernate.entity;
 
 import java.io.Serializable;

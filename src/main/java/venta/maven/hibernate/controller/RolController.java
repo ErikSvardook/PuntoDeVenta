@@ -76,13 +76,15 @@ public class RolController implements Serializable {
     }
 
     //Metodo para eliminar registros
-    public void eliminarRegistro() {
+    public void eliminarRegistro(Rol rol) {
         service.eliminarRegistro(rol);
+        listaRegistros = service.obtenerRegistros();
     }
 
     //Metodo para actualizar registros
     public void actualizarRegistro() {
         service.actualizarRegistro(rol);
+        listaRegistros = service.obtenerRegistros();
     }
 
     //Metodo para validar solo texto

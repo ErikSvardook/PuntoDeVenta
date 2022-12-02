@@ -82,14 +82,16 @@ public class ProductoController {
         FacesContext.getCurrentInstance().addMessage(null, mensaje);
     }
 
-    //Metodo para eliminar registros
-    public void eliminarRegistro() {
+    //Metodo para eliminar registros    
+    public void eliminarRegistro(Producto producto) {
         service.eliminarRegistro(producto);
+        listaRegistroProducto = service.obtenerRegistrosProducto();
     }
 
     //Metodo para actualizar registros
     public void actualizarRegistro() {
         service.actualizarRegistro(producto);
+        listaRegistroProducto = service.obtenerRegistrosProducto();
     }
 
     //Metodo para validar solo texto

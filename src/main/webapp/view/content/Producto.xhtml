@@ -74,6 +74,11 @@
                                 </f:facet>
                             </p:cellEditor>
                         </p:column>
+                        
+                        <p:column headerText="Eliminar">
+                            <p:commandButton action="#{producto.eliminarRegistro(registro)}"  value="Eliminar" update=":form:idTable,:form:msgs">
+                            </p:commandButton>
+                        </p:column>
 
                         <p:column style="width:6rem">
                             <p:rowEditor editTitle="Edit Row" cancelTitle="Cancel Edit" saveTitle="Save Row"/>

@@ -9,7 +9,6 @@ import venta.maven.hibernate.entity.Venta;
 public class VentaController {
 
     private static IVentaService service;
-
     private Venta venta;
     private List<Venta> listaRegistroVenta;
 
@@ -18,16 +17,12 @@ public class VentaController {
         service = new VentaServiceImpl();
         venta = new Venta();
         listaRegistroVenta = service.obtenerRegistrosVenta();
-
     }
 
     public static void main(String[] args) {
-
         Venta venta = new Venta();
-
         service = new VentaServiceImpl();
         service.insertarRegistroVenta(venta);
-
     }
 
     public void crearRegistro() {

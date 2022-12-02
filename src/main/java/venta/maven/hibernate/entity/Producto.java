@@ -2,7 +2,7 @@
 Autor:Gamaliel Silva López 
 Creacion:15/Nov/2022
 Actualizacion:1/diembre/2022
-Descripcion: Se implementa la conexion de base de datos de la tabla producto.
+Descripcion: Se implementa la conexion de base de datos de la tabla usuario.
 */
 package venta.maven.hibernate.entity;
 
@@ -18,6 +18,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+
 
 @Entity
 @Table(name = "producto")
@@ -40,10 +41,11 @@ public class Producto implements Serializable {
     @Size(max = 20)
     @Column(name = "nombre")
     private String nombre;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "preciounitario")
-    private Integer preciounitario;
+    private Double preciounitario;
     @Column(name = "preciocompra")
-    private Integer preciocompra;
+    private Double preciocompra;
     @Column(name = "cantidad")
     private Integer cantidad;
 
@@ -70,19 +72,19 @@ public class Producto implements Serializable {
         this.nombre = nombre;
     }
 
-    public Integer getPreciounitario() {
+    public Double getPreciounitario() {
         return preciounitario;
     }
 
-    public void setPreciounitario(Integer preciounitario) {
+    public void setPreciounitario(Double preciounitario) {
         this.preciounitario = preciounitario;
     }
 
-    public Integer getPreciocompra() {
+    public Double getPreciocompra() {
         return preciocompra;
     }
 
-    public void setPreciocompra(Integer preciocompra) {
+    public void setPreciocompra(Double preciocompra) {
         this.preciocompra = preciocompra;
     }
 
@@ -103,6 +105,7 @@ public class Producto implements Serializable {
 
     @Override
     public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Producto)) {
             return false;
         }

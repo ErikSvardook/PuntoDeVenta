@@ -70,20 +70,17 @@
                     </p:dataTable>
 
                     <h:panelGrid id="idPanel" columns="2">
-
                         <h:outputLabel value="Ingrese el rol"></h:outputLabel>
-
                         <p:inputText id="idRol" value="#{rol.rol.rol}" required="true" validator="#{rol.validarTexto}" >
-
                         </p:inputText>
 
                         <h:outputLabel value="Ingrese el nombre"></h:outputLabel>
                         <p:inputText id="idnombre" value="#{rol.rol.nombre}" required="true" validator="#{rol.validarTexto}"></p:inputText>
 
-                        <h:outputLabel value="Ingrese la contraeña"></h:outputLabel>
+                        <h:outputLabel value="Ingrese la contraseña"></h:outputLabel>
                         <p:inputText id="idcontraseña" value="#{rol.rol.contraseña}" required="true"></p:inputText>
 
-                        <p:commandButton action="#{rol.crearRegistro()}" value="Guardar registro" update=":form:idTable">
+                        <p:commandButton action="#{rol.crearRegistro()}" value="Guardar registro" update=":form:idTable,form:msgs">
                         </p:commandButton>
 
                     </h:panelGrid>

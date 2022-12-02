@@ -1,4 +1,3 @@
-
 package venta.maven.hibernate.controller;
 
 import java.util.List;
@@ -6,7 +5,6 @@ import javax.annotation.PostConstruct;
 import venta.maven.hibernate.service.IVentaService;
 import venta.maven.hibernate.service.VentaServiceImpl;
 import venta.maven.hibernate.entity.Venta;
-
 
 public class VentaController {
 

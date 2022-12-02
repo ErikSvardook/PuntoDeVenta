@@ -3,7 +3,7 @@ Autor:Erik Jarquín Sánchez
 Creacion:15/Nov/2022
 Actualizacion:27/Nov/2022
 Descripcion: En este clase se implementan los metodos  para obtener registros, insertarregistro,
-actualizar registro, eliminar registro y también los metodos de validaciones.
+actualizar registro, eliminar registro y también los metodos de validaciones del modulo Producto.
  */
 package venta.maven.hibernate.controller;
 
@@ -48,6 +48,7 @@ public class ProductoController {
     public void crearRegistro() {
         service.insertarRegistroProducto(producto);
         System.out.println("INGRESANDO");
+        listaRegistroProducto = service.obtenerRegistrosProducto();
     }
 
     //Se inserta el producto
@@ -73,6 +74,7 @@ public class ProductoController {
         FacesContext.getCurrentInstance().addMessage(null, mensaje);
     }
 
+    //Metodo para cancelar las acciones
     public void onRowCancel(RowEditEvent event) {
         producto = (Producto) event.getObject();
         service.eliminarRegistro(producto);
@@ -80,31 +82,33 @@ public class ProductoController {
         FacesContext.getCurrentInstance().addMessage(null, mensaje);
     }
 
+    //Metodo para eliminar registros
     public void eliminarRegistro() {
         service.eliminarRegistro(producto);
     }
 
+    //Metodo para actualizar registros
     public void actualizarRegistro() {
         service.actualizarRegistro(producto);
     }
 
+    //Metodo para validar solo texto
     public void validarTexto(FacesContext context, UIComponent toValidate, Object value) {
         context = FacesContext.getCurrentInstance();
         String texto = (String) value;
-
         if (!texto.matches("[A-Za-z]*")) {
             ((UIInput) toValidate).setValid(false);
             context.addMessage("Nota", new FacesMessage("Solo deben ingresarse letras"));
         }
     }
 
+    //Metodo para validar solo numeros
     public void validarNumeros(FacesContext context, UIComponent toValidate, Object value) {
         context = FacesContext.getCurrentInstance();
         String texto = (String) value;
-
-        if (texto.compareTo("hola") == 0) {
+        if (!texto.matches("^[0-9]+([.])?([0-9]+)?$")) {
             ((UIInput) toValidate).setValid(false);
-            context.addMessage("nota", new FacesMessage("xxxxx"));
+            context.addMessage("nota", new FacesMessage("Solo deben ingresarse numeros flotantes"));
         }
     }
 }

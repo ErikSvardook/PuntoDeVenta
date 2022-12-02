@@ -1,4 +1,9 @@
-
+/*
+Autor:Hermilo Almaraz Vargas
+Creacion:15/Nov/2022
+Actualizacion:01/12/2022
+Descripcion: Ventas
+*/
 package venta.maven.hibernate.model;
 
 import java.util.List;

@@ -1,3 +1,9 @@
+/*
+Autor: Erik Jarquín Sánchez 
+Creacion:15/Nov/2022
+Actualizacion:01/12/2022
+Descripcion: Se definen los metodos de usurio
+*/
 package venta.maven.hibernate.model;
 
 import java.util.List;
